@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Cliente', function () {
+Route::get('cliente', function () {
     return view('index');
 });
+Route::get('login', function () {
+    return view('login');
+});
+
+// Route::get('/login', 'Auth\loginController@showLoginForm');
+// Route::post('/login', 'Auth\loginController@Login');
+
+Route::get('/perf', 'perfController@index')->name('perf');
+
